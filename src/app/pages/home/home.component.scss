@@ -3,7 +3,7 @@
     text-align: center;
     max-height: 100%;
     overflow-y: auto;
-    height: calc(89vh - 130px)
+    height: calc(89vh - 140px);
 }
 
 
@@ -43,6 +43,7 @@
 }
 
 .filter-select{
+        margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;

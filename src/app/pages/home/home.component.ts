@@ -70,15 +70,16 @@ export class HomeComponent implements OnInit {
 
           const newPokemons = await Promise.all(data.results.map(async (pokemon: Result) => {
             const info = await this._srvPokemon.getInfoPokemon(pokemon.name);
-            const { height, types } = info;
+            const { height, types, abilities } = info;
 
             return {
               ...pokemon,
               type: types?.[0]?.type?.name ?? 'Desconocido',
-              height: height ?? 'Alltura desconocida'
+              height: height ?? 'Alltura desconocida',
+              abilities: abilities?.map((abilityData: any) => abilityData.ability.name) ?? [] 
+
             };
           }));
-
           this.allPokemons = [...this.allPokemons, ...newPokemons];
 
           this.searchSubject.next({ type: this.typeFilter, name: this.nameFilter });
@@ -106,7 +107,6 @@ export class HomeComponent implements OnInit {
           name: type.name,
           value: type.name
         }));
-        console.log('Types:', this.types);
       },
       error: (error) => {
         console.error('Error fetching Pokemon types:', error);

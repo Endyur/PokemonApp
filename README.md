@@ -1,59 +1,105 @@
-# PokemonPrueba
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+# 🧪 Pokémon Angular App
 
-## Development server
+Aplicación web desarrollada con Angular que muestra información de Pokémon consumiendo una API pública.
 
-To start a local development server, run:
+## 🚀 Requisitos
+
+- Node.js (versión recomendada: >= 18)
+- Angular CLI
+- Git
+- Docker (opcional, para ejecución en contenedor)
+
+---
+
+## 📥 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/tu-usuario/pokemon-angular-app.git
+cd pokemon-angular-app
+```
+
+---
+
+## 📦 2. Instalar dependencias
+
+Instala las dependencias del proyecto con NPM:
+
+```bash
+npm install
+```
+
+---
+
+## 🧾 3. Ejecutar el proyecto localmente
+
+Usa Angular CLI para iniciar el servidor de desarrollo:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Luego abre tu navegador en:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
+
+## 🐳 4. Construir el contenedor Docker
+
+Primero asegúrate de haber generado el build de producción:
 
 ```bash
-ng generate --help
+npm run build --prod
 ```
 
-## Building
-
-To build the project run:
+Después, construye la imagen Docker:
 
 ```bash
-ng build
+docker build -t angular-pokemon .
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🧱 5. Ejecutar la imagen Docker y acceder a la app
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Lanza el contenedor en el puerto 8080 (puedes cambiarlo si lo necesitas):
 
 ```bash
-ng test
+docker run -d -p 8080:80 angular-pokemon
 ```
 
-## Running end-to-end tests
+Abre el navegador en:
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```
+http://localhost:8080
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📁 Estructura del proyecto
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```
+pokemon-angular-app/
+├── src/                 # Código fuente de Angular
+├── dist/                # Build de producción (después de compilar)
+├── Dockerfile           # Archivo de configuración Docker
+├── nginx.conf           # Configuración personalizada de Nginx
+├── package.json         # Dependencias y scripts
+└── README.md            # Instrucciones de uso
+```
+
+---
+
+## 🛠️ Construido con
+
+- Angular
+- TypeScript
+- HTML/CSS
+- Docker + Nginx
+
+---
+
+By Ender Dominguez

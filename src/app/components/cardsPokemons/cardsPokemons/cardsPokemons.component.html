@@ -1,7 +1,7 @@
 <div class="pokemonCards-container" >
   <div class="pokemonCard" *ngFor="let pokemon of pokemons let i=index"
    [routerLink]="['/detail', pokemon.name]"
-   [state]="{ name: pokemon.name, type: pokemon.type, img: pokemon.url, height: pokemon.height, }">
+   [state]="{ name: pokemon.name, type: pokemon.type, img: pokemon.url, height: pokemon.height, abilities: pokemon.abilities || [] }">
   <img src="{{ pokemon.url | pokemonPie }}" alt="{{ pokemon.name }}" />
   <p>{{ pokemon.name | titlecase }}</p>
   <p>Tipo: {{ pokemon.type || 'Cargando...' | titlecase }}</p>

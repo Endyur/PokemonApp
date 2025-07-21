@@ -8,7 +8,7 @@ export const routes: Routes = [
    },
    {
     path: 'detail/:name',
-    loadComponent: () => import('./components/detail/detailPokemon/detailPokemon.component')  
+    loadComponent: () => import('./components/detail/detailPokemon/detailPokemon.component').then(m => m.DetailPokemonComponent)
    },
    {
     path: '**',

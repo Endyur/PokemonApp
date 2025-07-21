@@ -1,17 +1,23 @@
 <div class="detailPokemon-container">
   <div class="pokemonCardDetail">
 
-  <img src="{{ imgUrl | pokemonPie }}" />
-  <p>{{ name | titlecase }}</p>
-  <div class="left">
-    <p>Tipo: {{ type || 'Cargando...' | titlecase }}</p>
-    <p>Altura: {{ height }}</p>
+    <img src="{{ imgUrl | pokemonPie }}" />
+    <p>{{ name | titlecase }}</p>
+    <div class="left">
+      <p>Tipo: {{ type || 'Cargando...' | titlecase }}</p>
+      <p>Altura: {{ height }}</p>
+    </div>
+    <div class="right">
+      <p> Poke Habilidades:</p>
+      <ul>
+        <li *ngFor="let ability of abilities">{{ ability | titlecase }}</li>
+      </ul>
+    </div>
   </div>
-  <div class="right">
-    <p>Habilidades:</p>
-    <ul>
-      <!-- <li *ngFor="let ability of abilities">{{ ability }}</li> -->
-    </ul>
+    <div class="action-buttons">
+    <button class="back-to-home-btn" (click)="goBackToHome()">
+      <span class="btn-icon">🏠</span>
+      <span class="btn-text">Volver al Inicio</span>
+    </button>
   </div>
-</div>
 </div>

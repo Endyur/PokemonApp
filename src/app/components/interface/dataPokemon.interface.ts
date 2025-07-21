@@ -9,4 +9,6 @@ export interface Result {
     url: string;
     type?: string;
     height?: string;
+    abilities?: string[]; 
+
 }

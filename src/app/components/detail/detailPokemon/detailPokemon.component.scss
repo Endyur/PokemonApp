@@ -1,35 +1,186 @@
-.pokemonCardDetail {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 20px;
-  width: 180px;
-  text-align: center;
+.detailPokemon-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 15px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+
+.pokemonCardDetail {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 2px solid #eed535;
+  margin-bottom: 15px;
+}
+
+.pokemonCardDetail img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.pokemonCardDetail > p {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #333;
+  margin: 15px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  gap: 15px;
+}
+
+.pokemon-info .left, 
+.pokemon-info .right {
+  flex: 1;
+  text-align: left;
+}
+
+.pokemon-info .left p, 
+.pokemon-info .right p {
+  font-size: 1em;
+  margin: 8px 0;
+  color: #555;
+  font-weight: 500;
+}
+
+.pokemon-info .right ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.pokemon-info .right ul li {
+  background: linear-gradient(135deg, #eed535, #f5e555);
+  color: #333;
+  padding: 6px 12px;
+  margin: 6px 0;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(238, 213, 53, 0.3);
+  border: 1px solid #ddc520;
+  transition: transform 0.2s ease;
+}
+
+.pokemon-info .right ul li:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(238, 213, 53, 0.4);
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.back-to-home-btn {
+  display: flex;
   align-items: center;
-
-  font-size: 1.2rem;
-  color: #444;
+  gap: 6px;
+  background: linear-gradient(135deg, #eed535, #f5e555);
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 15px;
+  font-size: 0.85em;
   font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(238, 213, 53, 0.3);
+  border: 2px solid #ddc520;
+  transition: all 0.3s ease;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+.back-to-home-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(238, 213, 53, 0.4);
+  background: linear-gradient(135deg, #f5e555, #eed535);
+}
+
+.back-to-home-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(238, 213, 53, 0.3);
+}
+
+.back-to-home-btn .btn-icon {
+  font-size: 1em;
+  transition: transform 0.3s ease;
+}
+
+.back-to-home-btn .btn-text {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.back-to-home-btn:hover .btn-icon {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .detailPokemon-container {
+    padding: 10px;
+    max-width: 95%;
+    padding-top: 20px;
+  }
+
+  .pokemon-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pokemonCardDetail {
+    padding: 15px;
+    margin: 5px;
+  }
+
+  .pokemonCardDetail img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .pokemonCardDetail > p {
+    font-size: 1.4em;
+  }
+
+  .back-to-home-btn {
+    padding: 6px 12px;
+    font-size: 0.8em;
   }
 }
 
-.pokemonCardDetail:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
+@media (max-width: 480px) {
+  .detailPokemon-container {
+    padding-top: 15px;
+  }
 
-.detailPokemon-container {
-  margin-top: 96px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .pokemonCardDetail img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .pokemonCardDetail > p {
+    font-size: 1.2em;
+  }
+
+  .pokemon-info .left p, 
+  .pokemon-info .right p {
+    font-size: 0.9em;
+  }
+
+  .pokemon-info .right ul li {
+    font-size: 0.8em;
+    padding: 4px 8px;
+  }
 }
