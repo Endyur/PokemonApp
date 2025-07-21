@@ -1,0 +1,28 @@
+<div class="filter-select">
+    <div class="div-select">
+        <label for="typeFilter">Filtrar por tipo:</label>
+    <select id="typeFilter" [(ngModel)]="selectedType" (change)="onChangeSelectType($event)">
+        <option value="">Todos los tipos</option>
+        <option *ngFor="let type of types" [value]="type.value">{{ type.name }}</option>
+    </select>
+    </div>
+    <div class="div-filter">
+    <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onInputChange($event)" placeholder="Buscar Pokémon..." />
+
+    </div>
+
+</div>
+<main id="main-content" #mainCards (scroll)="onScroll($event)">
+
+  <app-cardsPokemons  [pokemons]="filteredPokemons"
+  ></app-cardsPokemons>
+
+  <div class="loading-container" *ngIf="isLoading">
+    <div class="loading-spinner">
+
+    </div>
+     <p>Cargando Pokémon...</p>
+  </div>
+
+  <p *ngIf="!isLoading && filteredPokemons.length === 0">No se encontraron Pokémon</p>
+</main>

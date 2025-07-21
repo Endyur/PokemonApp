@@ -1,0 +1,17 @@
+<div class="detailPokemon-container">
+  <div class="pokemonCardDetail">
+
+  <img src="{{ imgUrl | pokemonPie }}" />
+  <p>{{ name | titlecase }}</p>
+  <div class="left">
+    <p>Tipo: {{ type || 'Cargando...' | titlecase }}</p>
+    <p>Altura: {{ height }}</p>
+  </div>
+  <div class="right">
+    <p>Habilidades:</p>
+    <ul>
+      <!-- <li *ngFor="let ability of abilities">{{ ability }}</li> -->
+    </ul>
+  </div>
+</div>
+</div>
